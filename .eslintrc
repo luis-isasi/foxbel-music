@@ -3,6 +3,7 @@
   "extends": ["next", "next/core-web-vitals", "prettier"],
   "plugins": ["@typescript-eslint", "eslint-plugin-prettier"],
   "rules": {
+    "@next/next/no-document-import-in-page": "off",
     "prettier/prettier": [
       "error",
       {
