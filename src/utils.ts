@@ -41,8 +41,6 @@ export async function fetcher<DataResponse>({
 
   let data = await response.json()
 
-  console.log({ data })
-
   type MyResponse = DataResponse & {
     error?: string
   }

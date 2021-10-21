@@ -3,7 +3,6 @@ import LayoutApp from '@Components/LayoutApp'
 
 import Sidebar from '@Components/Sidebar'
 import Search from '@Components/Search'
-
 import User from '@Components/User'
 
 const Home = () => {
