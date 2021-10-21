@@ -1,11 +1,14 @@
-import { useRouter } from 'next/router'
+import RedirectHomeToken from '@/src/Hoc/RedirectHomeToken'
+import { useContextAuth } from '@Context/contextAuth'
 
 const Home = () => {
-  const { query } = useRouter()
-  console.log({ query })
-  console.log(window.location.href)
+  const { user } = useContextAuth()
 
-  return <div>DESDE HOME</div>
+  return (
+    <RedirectHomeToken>
+      <div>{user?.user.name}</div>
+    </RedirectHomeToken>
+  )
 }
 
 export default Home

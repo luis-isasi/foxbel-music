@@ -1,3 +1,5 @@
+import { BASE_URL_ALLOW_ORIGIN } from '@Constants'
+
 //FETCHER
 export async function fetcher<DataResponse>({
   endpoint,
@@ -28,19 +30,22 @@ export async function fetcher<DataResponse>({
   // }
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}${endpoint}`,
+    `${BASE_URL_ALLOW_ORIGIN}${process.env.NEXT_PUBLIC_BASE_URL}${endpoint}`,
     {
       method: method,
+      mode: 'cors',
       body: JSON.stringify(body),
       headers,
     }
   )
 
-  let res: { data: any } = await response.json()
+  let data = await response.json()
+
+  console.log({ data })
 
   type MyResponse = DataResponse & {
     error?: string
   }
 
-  return res.data as MyResponse
+  return data as MyResponse
 }

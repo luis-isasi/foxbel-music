@@ -1,8 +1,13 @@
 import type { AppProps } from 'next/app'
 
+import { ContextAuthProvider } from '@Context/contextAuth'
 import '../../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ContextAuthProvider>
+      <Component {...pageProps} />
+    </ContextAuthProvider>
+  )
 }
 export default MyApp

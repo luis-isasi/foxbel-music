@@ -16,7 +16,7 @@ const App = () => {
             className="mx-auto"
           />
           <a
-            href={`https://connect.deezer.com/oauth/auth.php?app_id=${process.env.NEXT_PUBLIC_APP_ID}&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&perms=basic_access,email&response_type=token`}
+            href={`https://connect.deezer.com/oauth/auth.php?app_id=${process.env.NEXT_PUBLIC_APP_ID}&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&perms=basic_access,email&response_type=token&offline_access=true`}
             className="font-bold hover:text-gray-700"
           >
             Login
