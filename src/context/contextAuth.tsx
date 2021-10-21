@@ -10,7 +10,7 @@ interface UserLocalStorage {
 }
 
 interface TypeContextUser {
-  user: undefined | null | UserLocalStorage
+  userAuth: undefined | null | UserLocalStorage
   signoutUser: () => void
   setDataUserLocalStorage: (dataUser: UserLocalStorage) => void
   isLoading: boolean
@@ -21,7 +21,7 @@ const ContextAuth = createContext<TypeContextUser | undefined>(undefined)
 
 //Provider
 export const ContextAuthProvider: React.FC = ({ children }) => {
-  const [user, setUser] = useState<undefined | null | UserLocalStorage>(
+  const [userAuth, setUserAuth] = useState<undefined | null | UserLocalStorage>(
     undefined
   )
   const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -33,11 +33,11 @@ export const ContextAuthProvider: React.FC = ({ children }) => {
     )
 
     if (dataUser) {
-      setUser({
+      setUserAuth({
         token: dataUser.token,
         user: dataUser.user,
       })
-    } else setUser(null)
+    } else setUserAuth(null)
 
     //change isLoading
     setIsLoading(false)
@@ -45,19 +45,19 @@ export const ContextAuthProvider: React.FC = ({ children }) => {
 
   const setDataUserLocalStorage = (dataUser: UserLocalStorage) => {
     localStorage.setItem(USER_SESSION, JSON.stringify(dataUser))
-    setUser(dataUser)
+    setUserAuth(dataUser)
   }
 
   const signoutUser = () => {
     localStorage.removeItem(USER_SESSION)
-    setUser(null)
+    setUserAuth(null)
     router.push('/')
   }
 
   return (
     <ContextAuth.Provider
       value={{
-        user,
+        userAuth,
         signoutUser,
         setDataUserLocalStorage,
         isLoading,

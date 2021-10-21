@@ -1,18 +1,23 @@
 import RedirectHomeToken from '@/src/Hoc/RedirectHomeToken'
-import { useContextAuth } from '@Context/contextAuth'
 import LayoutApp from '@Components/LayoutApp'
 
 import Sidebar from '@Components/Sidebar'
+import Search from '@Components/Search'
+
+import User from '@Components/User'
 
 const Home = () => {
-  const { user } = useContextAuth()
-
   return (
     <RedirectHomeToken>
       <div className="min-h-screen flex flex-col">
         <div className="flex-1 flex ">
           <Sidebar />
-          <div>{user?.user.name}</div>
+          <div className="w-full px-10">
+            <header className="w-full min-h-25 flex justify-between items-center ">
+              <Search />
+              <User />
+            </header>
+          </div>
         </div>
         {/* {reproductor} */}
         <div className="h-25 bottom-0 bg-red-primary">REPRODUCTOR</div>

@@ -138,7 +138,7 @@ module.exports = {
       }),
       colors: () => ({
         red: {
-          main: '#E6215D',
+          main: '#E86060',
           primary: '#EB5757',
           secondary: '#662323',
         },

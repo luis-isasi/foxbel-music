@@ -4,7 +4,7 @@ const Sidebar = () => {
   const classNameBtn = 'font-light mb-2'
 
   return (
-    <div className="bg-red-secondary w-82 min-h-full text-white">
+    <div className="bg-red-secondary min-w-72 w-82 min-h-full text-white">
       <div className="flex justify-center my-7">
         <Image
           src="/img/foxbel-music.png"
