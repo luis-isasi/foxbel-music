@@ -1,9 +1,9 @@
 import RedirectHomeToken from '@/src/Hoc/RedirectHomeToken'
-import LayoutApp from '@Components/LayoutApp'
 
 import Sidebar from '@Components/Sidebar'
 import Search from '@Components/Search'
 import User from '@Components/User'
+import ContainerTracks from './sections/ContainerTracks'
 
 const Home = () => {
   return (
@@ -16,6 +16,7 @@ const Home = () => {
               <Search />
               <User />
             </header>
+            <ContainerTracks />
           </div>
         </div>
         {/* {reproductor} */}

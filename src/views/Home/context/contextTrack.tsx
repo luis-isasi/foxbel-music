@@ -15,6 +15,8 @@ export const ContextTrackProvider: React.FC = ({ children }) => {
   const [selectedTrack, setSelectedTrack] = useState<Track | null>(null)
   const [foundTracks, setFoundTracks] = useState<Track[]>([])
 
+  console.log({ selectedTrack })
+
   return (
     <ContextTrack.Provider
       value={{ selectedTrack, setSelectedTrack, foundTracks, setFoundTracks }}

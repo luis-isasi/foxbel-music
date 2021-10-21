@@ -9,7 +9,7 @@ import track from '@/src/services/track'
 const Search = () => {
   const [text, setText] = useState<string>('')
   const queryClient = useQueryClient()
-  const { setFoundTracks, foundTracks } = useContextTrack()
+  const { setFoundTracks } = useContextTrack()
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
@@ -23,24 +23,20 @@ const Search = () => {
         track.getTracks(value)
       )
       setFoundTracks(data?.data)
-    }, 400),
+    }, 300),
     []
   )
 
   return (
-    <div>
-      <form>
-        <div className="min-w-88 w-102 border-1 h-9 border-gray-400 rounded-full py-1 px-4 flex justify-between items-center">
-          <input
-            value={text}
-            onChange={handleChange}
-            type="text"
-            placeholder="Buscar"
-            className="w-full h-full focus:outline-none"
-          />
-          <SearchRoundedIcon className="fill-current text-gray-400" />
-        </div>
-      </form>
+    <div className="min-w-88 w-102 border-1 h-9 border-gray-400 rounded-full py-1 px-4 flex justify-between items-center">
+      <input
+        value={text}
+        onChange={handleChange}
+        type="text"
+        placeholder="Buscar"
+        className="w-full h-full focus:outline-none"
+      />
+      <SearchRoundedIcon className="fill-current text-gray-400" />
     </div>
   )
 }
