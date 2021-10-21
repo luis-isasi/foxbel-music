@@ -15,12 +15,12 @@ const App = () => {
             alt="Foxbel Music Logo"
             className="mx-auto"
           />
-          <MyLink
-            href={`https://connect.deezer.com/oauth/auth.php?app_id=${process.env.NEXT_PUBLIC_APP_ID}&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&perms=basic_access,email`}
+          <a
+            href={`https://connect.deezer.com/oauth/auth.php?app_id=${process.env.NEXT_PUBLIC_APP_ID}&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&perms=basic_access,email&response_type=token`}
             className="font-bold hover:text-gray-700"
           >
             Login
-          </MyLink>
+          </a>
         </div>
       </header>
       <div className="text-center">
