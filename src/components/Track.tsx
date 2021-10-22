@@ -3,6 +3,7 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded'
 
 import { Track as TrackType } from '@Types'
 import { useContextTrack } from '@Views/Home/context/contextTrack'
+import React from 'react'
 
 const Track: React.FC<{ track: TrackType }> = ({
   track: { artist, title_short, title },
@@ -18,13 +19,14 @@ const Track: React.FC<{ track: TrackType }> = ({
     <article className="min-h-52 h-auto min-w-40 w-40 mr-5 mb-5">
       <button className="relative h-40 w-40 group" onClick={handleClick}>
         <Image
-          layout="fill"
-          loader={({ src }) => `${src}`}
+          loader={({ src, width }) => `${src}?w=${width}`}
           src={artist.picture}
           alt={title_short}
-          unoptimized={true}
+          width={160}
+          height={160}
+          className="static"
         />
-        <div className="absolute top-0 w-full h-full flex justify-center items-center">
+        <div className="absolute top-0 w-full h-full flex justify-center items-center z-5">
           <PlayArrowRoundedIcon
             className="fill-current text-white mx-auto opacity-50 group-hover:opacity-100"
             style={{

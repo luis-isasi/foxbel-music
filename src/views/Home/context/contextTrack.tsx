@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from 'react'
 import { Track } from '@Types'
 
 interface TypeContextTrack {
-  selectedTrack: Track | null
+  selectedTrack: Track | undefined
   setSelectedTrack: (track: Track) => void
   foundTracks: Track[]
   setFoundTracks: (tracks: Track[]) => void
@@ -12,7 +12,9 @@ interface TypeContextTrack {
 const ContextTrack = createContext<TypeContextTrack | undefined>(undefined)
 
 export const ContextTrackProvider: React.FC = ({ children }) => {
-  const [selectedTrack, setSelectedTrack] = useState<Track | null>(null)
+  const [selectedTrack, setSelectedTrack] = useState<Track | undefined>(
+    undefined
+  )
   const [foundTracks, setFoundTracks] = useState<Track[]>([])
 
   console.log({ selectedTrack })

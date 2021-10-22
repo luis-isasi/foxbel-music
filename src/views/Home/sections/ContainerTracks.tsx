@@ -14,7 +14,7 @@ const ContainerTracks = () => {
     <section>
       <p className="text-red-main text-4xl font-semibold my-5">Resultados</p>
       <div className="flex justify-evenly flex-wrap">
-        {foundTracks.length && renderTracks()}
+        {foundTracks?.length ? renderTracks() : 'Busque su canción favorita 😀'}
       </div>
     </section>
   )
