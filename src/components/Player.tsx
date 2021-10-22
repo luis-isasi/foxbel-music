@@ -6,7 +6,6 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded'
 import PauseRoundedIcon from '@mui/icons-material/PauseRounded'
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded'
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded'
-import ReactAudioPlayer from 'react-audio-player'
 
 interface Music {
   state: 'pause' | 'play'
@@ -31,7 +30,7 @@ const Player = () => {
     }
 
     return (
-      <div className="h-25 bottom-0 bg-red-primary flex justify-between items-center pr-5">
+      <div className="min-h-25 h-25 bg-red-primary flex justify-between items-center pr-5">
         <div className="flex items-center">
           <div className="relative min-w-25 w-25 min-h-25 h-25">
             <Image
@@ -49,7 +48,6 @@ const Player = () => {
           </div>
         </div>
         <div>
-          {/* <ReactAudioPlayer src={preview} autoPlay controls /> */}
           <audio src={preview} autoPlay controls className="" />
           {/* <button onClick={playMusic}>
             <SkipPreviousRoundedIcon
@@ -75,8 +73,8 @@ const Player = () => {
   }
 
   return (
-    <div className="h-25 bottom-0 bg-red-primary text-white text-3xl">
-      SELECCIONA UNA CANCION
+    <div className="min-h-25 h-25 bottom-0 bg-red-primary text-white text-xl flex justify-center items-center">
+      🎵 Selecciona tu canción favorita 🎵
     </div>
   )
 }
